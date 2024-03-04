@@ -103,113 +103,113 @@ all_percentage_show_tag[4].innerText=data_ref.data().Php_Total_Percentage;
 // let get_data=await getDocs(ref_data);
 // console.log(get_data.size);
 
-let Quiz_object={
+// let Quiz_object={
 
 
-HTML:{
+// HTML:{
 
-    headers:[
-    {
-        Question:'1.What is Full form of HTML?',
-        Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
-        'Hyper Text Mark Language','Hyper Test Markup Language'],
-        Answers:['Hyper Text Markup Language','<href>',
-        'It defines a header for the document.','<table>','<body>']
+//     headers:[
+//     {
+//         Question:'1.What is Full form of HTML?',
+//         Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
+//         'Hyper Text Mark Language','Hyper Test Markup Language'],
+//         Answers:['Hyper Text Markup Language','<href>',
+//         'It defines a header for the document.','<table>','<body>']
     
-    },
+//     },
 
-    {
-        Question:'2.Which tag is used to create a hyperlink in HTML?',
-        Options:['<link>','<a>','<href>','hyper']
+//     {
+//         Question:'2.Which tag is used to create a hyperlink in HTML?',
+//         Options:['<link>','<a>','<href>','hyper']
      
-    },
-    {
-        Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
-        Options:['It contains the main content of the document.','It defines a header for the document.',
-        'It provides metadata about the document.','It creates a navigation bar.' ]
+//     },
+//     {
+//         Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
+//         Options:['It contains the main content of the document.','It defines a header for the document.',
+//         'It provides metadata about the document.','It creates a navigation bar.' ]
  
-    }
-    ],
+//     }
+//     ],
 
-    form:[
+//     form:[
 
-        {
-            Question:'1.What is Full form of HTML?',
-            Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
-            'Hyper Text Mark Language','Hyper Test Markup Language'],
-            Answers:['Hyper Text Markup Language','<href>',
-            'It defines a header for the document.','<table>','<body>']
+//         {
+//             Question:'1.What is Full form of HTML?',
+//             Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
+//             'Hyper Text Mark Language','Hyper Test Markup Language'],
+//             Answers:['Hyper Text Markup Language','<href>',
+//             'It defines a header for the document.','<table>','<body>']
         
-        },
+//         },
     
-        {
-            Question:'2.Which tag is used to create a hyperlink in HTML?',
-            Options:['<link>','<a>','<href>','hyper']
+//         {
+//             Question:'2.Which tag is used to create a hyperlink in HTML?',
+//             Options:['<link>','<a>','<href>','hyper']
          
-        },
-        {
-            Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
-            Options:['It contains the main content of the document.','It defines a header for the document.',
-            'It provides metadata about the document.','It creates a navigation bar.' ]
+//         },
+//         {
+//             Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
+//             Options:['It contains the main content of the document.','It defines a header for the document.',
+//             'It provides metadata about the document.','It creates a navigation bar.' ]
      
-        }
-    ]
-},
+//         }
+//     ]
+// },
 
-CSS:{
+// CSS:{
 
-    felx:[
-        {
-            Question:'1.What is Full form of HTML?',
-            Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
-            'Hyper Text Mark Language','Hyper Test Markup Language'],
-            Answers:['Hyper Text Markup Language','<href>',
-            'It defines a header for the document.','<table>','<body>']
+//     felx:[
+//         {
+//             Question:'1.What is Full form of HTML?',
+//             Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
+//             'Hyper Text Mark Language','Hyper Test Markup Language'],
+//             Answers:['Hyper Text Markup Language','<href>',
+//             'It defines a header for the document.','<table>','<body>']
         
-        },
+//         },
     
-        {
-            Question:'2.Which tag is used to create a hyperlink in HTML?',
-            Options:['<link>','<a>','<href>','hyper']
+//         {
+//             Question:'2.Which tag is used to create a hyperlink in HTML?',
+//             Options:['<link>','<a>','<href>','hyper']
          
-        },
-        {
-            Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
-            Options:['It contains the main content of the document.','It defines a header for the document.',
-            'It provides metadata about the document.','It creates a navigation bar.' ]
+//         },
+//         {
+//             Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
+//             Options:['It contains the main content of the document.','It defines a header for the document.',
+//             'It provides metadata about the document.','It creates a navigation bar.' ]
      
-        }
-        ],
+//         }
+//         ],
     
-        Grid:[
+//         Grid:[
     
-            {
-                Question:'1.What is Full form of HTML?',
-                Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
-                'Hyper Text Mark Language','Hyper Test Markup Language'],
-                Answers:['Hyper Text Markup Language','<href>',
-                'It defines a header for the document.','<table>','<body>']
+//             {
+//                 Question:'1.What is Full form of HTML?',
+//                 Options: ['Hyper Text Markup Language','Hyper Text Makeup Language',
+//                 'Hyper Text Mark Language','Hyper Test Markup Language'],
+//                 Answers:['Hyper Text Markup Language','<href>',
+//                 'It defines a header for the document.','<table>','<body>']
             
-            },
+//             },
         
-            {
-                Question:'2.Which tag is used to create a hyperlink in HTML?',
-                Options:['<link>','<a>','<href>','hyper']
+//             {
+//                 Question:'2.Which tag is used to create a hyperlink in HTML?',
+//                 Options:['<link>','<a>','<href>','hyper']
              
-            },
-            {
-                Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
-                Options:['It contains the main content of the document.','It defines a header for the document.',
-                'It provides metadata about the document.','It creates a navigation bar.' ]
+//             },
+//             {
+//                 Question:`3.In HTML, what is the purpose of the &lt;head&gt; element?`,
+//                 Options:['It contains the main content of the document.','It defines a header for the document.',
+//                 'It provides metadata about the document.','It creates a navigation bar.' ]
          
-            }
-        ]
+//             }
+//         ]
 
 
 
-}
+// }
 
-}
+// }
 
 
 
