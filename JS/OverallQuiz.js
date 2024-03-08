@@ -152,6 +152,7 @@ console.log(name);
 //   }
 // }
 
+// it was feach the db 
 async function fetchQuizData(databaseName) {
   try {
     let quizDataCollection = collection(db, databaseName);
@@ -164,8 +165,13 @@ async function fetchQuizData(databaseName) {
 }
 
 async function initializeQuiz() {
+
+  // it was get the key in localStorage
+
   let selectedQuiz = localStorage.getItem("selectedQuiz");
   let allQuizData;
+
+      // it was check db or firebase 
 
   if (
     selectedQuiz === "HTML_Overall_Quiz" ||
@@ -175,6 +181,9 @@ async function initializeQuiz() {
     selectedQuiz === "MySql_Overall_Quiz"
   ) {
     allQuizData = await fetchQuizData(selectedQuiz);
+    
+    // and it was short id 
+
     allQuizData.sort((a, b) => a.questionId - b.questionId);
   } else {
     console.error("Invalid or missing selectedQuiz in localStorage");
