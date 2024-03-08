@@ -73,8 +73,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
-
-
 // profile_drop
 
 let profile_page = document.querySelector(".profile_down");
@@ -99,10 +97,7 @@ logout.addEventListener("click", () => {
   windnameow.location.href = "./login.html";
 });
 
-
-
 // ---------------------Quiz_page
-
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
@@ -110,7 +105,7 @@ import {
   collection,
   getDocs,
   getDoc,
-  doc
+  doc,
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
@@ -198,36 +193,45 @@ async function initializeQuiz() {
   marks.className = "marks";
   div_get.appendChild(marks);
 
+      
+  // it is used to store the currentQuestion 
   let currentQuestion = 0;
+
+    // it is used to store the incorrectly score
   let score = 0;
+
+  // it is used to store the incorrectly answered questions
   let incorrectAnswers = [];
+
+
+    // Store the current question and score and incorrect answers
 
   function saveQuizState() {
     sessionStorage.setItem("currentQuestion", currentQuestion);
     sessionStorage.setItem("score", score);
-    sessionStorage.setItem(
-      "incorrectAnswers",
-      JSON.stringify(incorrectAnswers)
-    );
+    sessionStorage.setItem("incorrectAnswers",JSON.stringify(incorrectAnswers));
   }
+
+  // Retrieve the current question and score and incorrect answers
+
 
   function retrieveQuizState() {
     let storedQuestion = sessionStorage.getItem("currentQuestion");
     let storedScore = sessionStorage.getItem("score");
-    let storedIncorrectAnswers = JSON.parse(
-      sessionStorage.getItem("incorrectAnswers")
-    );
+    let storedIncorrectAnswers = JSON.parse(sessionStorage.getItem("incorrectAnswers"));
 
-    if (
-      storedQuestion !== null &&
-      storedScore !== null &&
-      storedIncorrectAnswers !== null
-    ) {
+      // it Check if all values are not null
+
+    if (storedQuestion !== null && storedScore !== null && storedIncorrectAnswers !== null) 
+    {
       currentQuestion = parseInt(storedQuestion);
       score = parseInt(storedScore);
       incorrectAnswers = storedIncorrectAnswers;
     }
   }
+
+  // it was the function to reset the session storage value
+  // currentQuestion and score and incorrectAnswers
 
   function clearQuizState() {
     sessionStorage.removeItem("currentQuestion");
@@ -238,7 +242,8 @@ async function initializeQuiz() {
   let Quiz_div = document.createElement("div");
   Quiz_div.className = "Quiz_div_1";
 
-  
+  // it is create a div and it was display the question and answer
+
   function displayQuestion() {
     let questionData = allQuizData[currentQuestion];
     let questionId = questionData.questionId;
@@ -253,7 +258,6 @@ async function initializeQuiz() {
     //   /[""]/g,
     //   ""
     // )}`; // Removing double quotes
-
 
     let options_Div = document.createElement("div");
     options_Div.className = "options_div";
@@ -287,19 +291,19 @@ async function initializeQuiz() {
       option.appendChild(radio);
       option.appendChild(optionText);
       // optionsElement_1.appendChild(optionsElement)
-      options_Div.appendChild(optionsElement)
+      options_Div.appendChild(optionsElement);
       optionsElement.appendChild(option);
     }
 
     quizContainer.innerHTML = "";
     Quiz_div.innerHTML = "";
 
-
     quizContainer.appendChild(Quiz_div);
     Quiz_div.append(question_Div);
     question_Div.appendChild(questionElement);
     Quiz_div.appendChild(options_Div);
 
+    // it was used for display a back button
 
     if (currentQuestion > 0) {
       backButton.style.display = "block";
@@ -307,6 +311,8 @@ async function initializeQuiz() {
       backButton.style.display = "none";
     }
   }
+
+  // it is used to check Answer
 
   function checkAnswer() {
     let selectedOption = document.querySelector('input[name="quiz"]:checked');
@@ -341,6 +347,8 @@ async function initializeQuiz() {
             generate_certificate.style.display = "block";
           });
 
+          // it is reset session storage
+
           function resetQuizState() {
             sessionStorage.removeItem("currentQuestion");
             sessionStorage.removeItem("score");
@@ -358,6 +366,9 @@ async function initializeQuiz() {
       saveQuizState();
     }
   }
+
+  // it is goback button
+
   function goBack() {
     if (currentQuestion > 0) {
       if (
@@ -374,6 +385,8 @@ async function initializeQuiz() {
       displayQuestion();
     }
   }
+
+  // It was show answer
 
   function showAnswer() {
     quizContainer.style.display = "none";
@@ -412,6 +425,8 @@ async function initializeQuiz() {
     `;
   }
 
+  // it was retry button
+
   function retryQuiz() {
     currentQuestion = 0;
     score = 0;
@@ -427,6 +442,8 @@ async function initializeQuiz() {
     resultContainer.innerHTML = "";
     displayQuestion();
   }
+
+  // it is displayResult
 
   function displayResult() {
     quizContainer.style.display = "none";
@@ -534,7 +551,6 @@ else if (certificate_get === "JavaScript_Overall_Quiz") {
     ctx3.fillText(`${name}`, 40, 176);
   }
 
-
   downloadBtn3.addEventListener("click", () => {
     downloadBtn3.href = canvas3.toDataURL("image/png");
     downloadBtn3.download = "Certificate.png";
@@ -563,17 +579,13 @@ else if (certificate_get === "MySql_Overall_Quiz") {
     ctx4.fillText(`${name}`, 40, 176);
   }
 
-
   downloadBtn4.addEventListener("click", () => {
     downloadBtn4.href = canvas4.toDataURL("image/png");
     downloadBtn4.download = "Certificate.png";
     // alert("Successfully downloaded");
     window.location.href = "./certificate.html";
   });
-
-
-} else if (certificate_get === "PHP_Overall_Quiz"){
-
+} else if (certificate_get === "PHP_Overall_Quiz") {
   const canvas5 = document.getElementById("canva");
   const ctx5 = canvas5.getContext("2d");
   const downloadBtn5 = document.getElementById("download_btn");
@@ -592,31 +604,26 @@ else if (certificate_get === "MySql_Overall_Quiz") {
     ctx5.fillText(`${name}`, 40, 176);
   }
 
-
   downloadBtn5.addEventListener("click", () => {
     downloadBtn5.href = canvas5.toDataURL("image/png");
     downloadBtn5.download = "Certificate.png";
     // alert("Successfully downloaded");
     window.location.href = "./certificate.html";
   });
-
-
-
-};
-
+}
 
 // Profile_Img shown in firebase
 
 try {
   const profileImg = document.querySelector(".profile");
-  const docRef = doc(db, 'users_img', `${id}`);
+  const docRef = doc(db, "users_img", `${id}`);
   const docSnapimg = await getDoc(docRef);
 
   if (docSnapimg.exists()) {
-      const userDataimg = docSnapimg.data();
-      profileImg.src = userDataimg.imageURL;
+    const userDataimg = docSnapimg.data();
+    profileImg.src = userDataimg.imageURL;
   } else {
-      console.log("The image is not found in Firestore.");
+    console.log("The image is not found in Firestore.");
   }
 } catch (error) {
   console.error("Error getting document:", error);
@@ -627,7 +634,7 @@ window.addEventListener("load", async function () {
   const profileImg = document.querySelector(".profile");
 
   try {
-    const docRef = doc(db, 'users_img', `${id}`);
+    const docRef = doc(db, "users_img", `${id}`);
     const docSnapimg = await getDoc(docRef);
 
     if (docSnapimg.exists()) {
@@ -642,13 +649,9 @@ window.addEventListener("load", async function () {
   }
 });
 
-
-
-
-
 // when i click the it will go to home page
 
 // let Dckaplogo = document.querySelector(".DCKAPlOGO");
-Dckaplogo.addEventListener("click",()=>{
-  window.location.href='./index.html'
-})
+Dckaplogo.addEventListener("click", () => {
+  window.location.href = "./index.html";
+});
